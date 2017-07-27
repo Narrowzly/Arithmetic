@@ -10,15 +10,15 @@ public class QuickSort {
 		a[i] = a[j];
 		a[j] = temp;
 	}
-
+	@SuppressWarnings("unchecked")
 	public static <T> boolean less(Comparable<T> a, Comparable<T> b) {
 		if (a.compareTo((T) b) < 0)
 			return true;
 		return false;
 	}
-
+	
 	public static <T> int partition(Comparable<T>[] a, int start, int end) {
-		Comparable partVal = a[start];
+		Comparable<T> partVal = a[start];
 		int i = start;
 		int j = end + 1;
 		while (true) {

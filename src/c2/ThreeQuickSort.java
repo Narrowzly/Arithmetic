@@ -16,7 +16,8 @@ public class ThreeQuickSort {
 			return true;
 		return false;
 	}
-
+	
+	@SuppressWarnings("unchecked")
 	public static <T> void sort(Comparable<T>[] a, int start, int end) {
 		if(start>=end) return;
 		int lt = start;

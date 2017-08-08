@@ -21,7 +21,7 @@ public class BianrySearch {
 		int start = 0;
 		int end = a.length-1;
 		while(start<=end) {
-			int middle = (end+start)/2;
+			int middle = start+(end-start)/2;//int middle = (end+start)/2;溢出	
 			if(key==a[middle]) {
 				return middle;
 			}else if(key<a[middle]) {

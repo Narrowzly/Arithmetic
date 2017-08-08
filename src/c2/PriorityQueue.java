@@ -38,11 +38,16 @@ public class PriorityQueue<T> {
 		return false;
 	}
 	public void swim(int k) {
+		Comparable<T> key = keys[k];
 		while(k>1) {//到1就停止了也就是k=2时进行最后一次可能的交换。
-			if(less(k/2 , k))
+			/*if(less(k/2 , k))
 			exch(k, k/2);       
+			k = k/2;*/
+			if(less(k, k/2)) break;
+			keys[k] = keys[k/2];		
 			k = k/2;
 		}
+		keys[k]  = key;//赋值次数变少
 	}
 	public boolean isEmpty() {
 		return size==0;

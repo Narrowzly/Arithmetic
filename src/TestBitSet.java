@@ -8,7 +8,7 @@ public class TestBitSet {
 		BitSet b = new BitSet(n+1);
 		b.set(2);
 		for(int i=3;i<b.size();i+=2)//2000000
-		b.set(i);//a[0], a[1], a[2], a[2000000], a[2000001]
+		b.set(i);//a[0], a[1], a[2], a[2000000]
 		int i=2;
 		while(i*i<n) {//首先n递增的话，肯定是有一个合数小于n的开平方，因为n的合数是最大了了，所以节省了时间。
 			if(b.get(i)) {

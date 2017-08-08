@@ -27,7 +27,7 @@ public class ThreeQuickSort {
 		while(i<=gt) {
 			int result = a[i].compareTo((T) compareVal);
 			if(result<0) exch(a, lt++, i++);
-			else if(result>0) exch(a, i, gt--);
+			else if(result>0) exch(a, i, gt--);//i的值换完就变了
 			else i++;
 		}
 		sort(a, start, lt-1);

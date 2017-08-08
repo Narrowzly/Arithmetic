@@ -65,7 +65,7 @@ public class QuickSort {
 	}
 
 	public static void main(String[] args) {
-		String[] a = StdIn.readAllStrings();
+		String[] a = StdIn.readAllStrings();//5 43  21
 		StdRandom.shuffle(a);
 		sort(a, 0, a.length - 1);
 		StdOut.println(isSorted(a));

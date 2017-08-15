@@ -42,7 +42,7 @@ public class BST<Key extends Comparable<Key>, Value> {
 		}
 	}
 	public void put(Key key,Value val) {
-		put(root, key, val);
+		root = put(root, key, val);
 	}
 	private Node put(Node n, Key key, Value val) {
 		if(n==null) {
@@ -152,9 +152,9 @@ public class BST<Key extends Comparable<Key>, Value> {
 		}
 		int locmp = lo.compareTo(n.key); 
 		int hicmp = hi.compareTo(n.key);
-		if(locmp<0) search(n.left, queue, lo, hi);//lo<n.key说明n泰
-		if(locmp>=0&&hicmp<=0) queue.enqueue(n.key);
-		if(hicmp>0) search(n.right, queue, lo, hi);
+		if(locmp<0) search(n.left, queue , lo, hi);//lo<n.key说明在n的左子树一定范围内可以直到小于lo
+		if(locmp<=0&&hicmp>=0) queue.enqueue(n.key);//
+		if(hicmp>0) search(n.right, queue, lo, hi);//hi>n.key说明在n的右子树一定范围内可以直到大于hi. 
 	}
 }
 
